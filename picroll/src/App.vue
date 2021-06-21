@@ -1,22 +1,31 @@
 <template>
   <div class="box">
     <picture-show></picture-show>
-    <slide-button></slide-button>
-    <bottom-button></bottom-button>
+
+
   </div>
 </template>
 
 <script>
-import SlideButton from './components/SlideButton.vue'
-import BottomButton from "./components/BottomButton";
+
 import PictureShow from "./components/PictureShow";
 
 export default {
   name: 'App',
   components: {
     PictureShow,
-    BottomButton,
-    SlideButton
+
+  },
+  data() {
+    return {
+      isActive: false,
+    }
+  },
+  methods: {
+    bigChange () {
+      this.isActive = !this.isActive;
+    }
+
   }
 
 }
@@ -27,5 +36,9 @@ export default {
   position: relative;
   width: 100%;
   height: 340px;
+}
+.active {
+  color: orange;
+  font-size: 40px;
 }
 </style>

@@ -1,19 +1,33 @@
 <template>
   <div class="botBtn">
-    <a href=""><span class="first"></span></a>
-    <a href=""><span></span></a>
-    <a href=""><span></span></a>
-    <a href=""><span></span></a>
-    <a href=""><span></span></a>
-    <a href=""><span></span></a>
-    <a href=""><span></span></a>
+    <span v-for="n in 7"
+          :key="n"
+          :class="{turnBlue:isBlue[n]}"
+          @click="changeColor(n)"></span>
   </div>
+
 </template>
 
 <script>
+import isBlue from "./PictureShow";
 export default {
-  name: "BottomButton"
+  name: "BottomButton",
+
+  data() {
+    return {
+
+
+    }
+  },
+
+  methods: {
+    changeColor (m) {
+      isBlue[m] = true;
+    },
+
+  }
 }
+
 </script>
 
 <style scoped>
@@ -28,19 +42,17 @@ export default {
   text-align: center;
   padding-top: 10px;
 }
-.botBtn a{
+.botBtn span{
   display: inline-block;
   width: 36px;
-  height: 10px;
+  height: 6px;
   margin: 0 3px;
 }
 span {
   display: block;
-  width: 35px;
-  height: 4px;
   background: red;
 }
-.first {
+div>span:first-child, .turnBlue{
   background: blue;
 }
 </style>

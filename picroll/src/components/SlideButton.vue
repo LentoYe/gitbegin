@@ -1,16 +1,13 @@
 <template>
   <div class="slideBtu">
-    <div @click="preving" href="" class="left btn">&lt;</div>
-    <div @click="nexting" href="" class="right btn">></div>
-<!--    <div @click="">-->
-<!--    </div>-->
+    <div @click="preving" class="left btn">&lt;</div>
+    <div @click="nexting" class="right btn">></div>
   </div>
 </template>
 
 <script>
 export default {
   name: 'SlideButton',
-
 }
 </script>
 
